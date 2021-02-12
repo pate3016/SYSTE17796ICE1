@@ -25,6 +25,16 @@ public class WeatherTemp {
         double average = (double) sum / temps.length;
         System.out.println("Average Temperature = " + average);
     }
+    public static void maxTemp(int[] temps) {
+        //calculate highest temperature
+        double maxTemp = temps[0];
+        for (int i = 1; i < temps.length; i++) {
+            if (temps[i] > maxTemp) {
+                maxTemp = temps[i];
+            }
+        }
+        System.out.println("Maximum Temperature = " + maxTemp);
+    }
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -42,5 +52,6 @@ public class WeatherTemp {
             temps[i] = input.nextInt();
         }
         calcAvg(temps);
+        maxTemp(temps);
     }
 }
